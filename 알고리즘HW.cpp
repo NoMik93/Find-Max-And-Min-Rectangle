@@ -1,9 +1,9 @@
-//2013726048 ê¹€ì¬ì›
-#include "stdafx.h"
+//2013726048 ±èÀç¿ø
 #include <stdio.h>
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <memory.h>
 using namespace std;
 
 #define MAX 1000
@@ -16,26 +16,26 @@ int main()
 	ifstream ifile;
 	string fileName;
 	int max[MAX], min[MAX];
-	int maxi1, maxi2, maxj1, maxj2;//ìµœëŒ“ê°’ì˜ ìµœì¢…ìœ„ì¹˜ê°€ ì €ì¥ë  ë³€ìˆ˜
-	int mini1, mini2, minj1, minj2;//ìµœì†Ÿê°’ì˜ ìµœì¢…ìœ„ì¹˜ê°€ ì €ì¥ë  ë³€ìˆ˜
+	int maxi1, maxi2, maxj1, maxj2;//ÃÖ´ñ°ªÀÇ ÃÖÁ¾À§Ä¡°¡ ÀúÀåµÉ º¯¼ö
+	int mini1, mini2, minj1, minj2;//ÃÖ¼Ú°ªÀÇ ÃÖÁ¾À§Ä¡°¡ ÀúÀåµÉ º¯¼ö
 	int temp, maxSum, minSum;
 	int i, j, k;
-	int maxI1, maxI2, minI1, minI2;//ìµœëŒ“ê°’ê³¼ ìµœì†Ÿê°’ì˜ ìœ„ì¹˜ê°€ ìµœì¢…ê°’ì¸ì§€ ì•Œì•„ë‚´ê¸° ì „ì— ì¼ì‹œì ìœ¼ë¡œ ì €ì¥í•  ë³€ìˆ˜
+	int maxI1, maxI2, minI1, minI2;//ÃÖ´ñ°ª°ú ÃÖ¼Ú°ªÀÇ À§Ä¡°¡ ÃÖÁ¾°ªÀÎÁö ¾Ë¾Æ³»±â Àü¿¡ ÀÏ½ÃÀûÀ¸·Î ÀúÀåÇÒ º¯¼ö
 	maxi1 = maxi2 = maxj1 = maxj2 = mini1 = mini2 = minj1 = minj2 = maxSum = minSum = temp = -1;
 
 	while (true)
 	{
-		printf("íŒŒì¼ ê²½ë¡œë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
+		printf("ÆÄÀÏ °æ·Î¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
 		cin >> fileName;
 		ifile.open(fileName);
 		if (ifile.fail())
-			printf("íŒŒì¼ ì´ë¦„ì´ë‚˜ ê²½ë¡œë¥¼ í™•ì¸í•˜ì„¸ìš”.\n");
+			printf("ÆÄÀÏ ÀÌ¸§ÀÌ³ª °æ·Î¸¦ È®ÀÎÇÏ¼¼¿ä.\n");
 		else
 			break;
 	}
 
 	ifile >> size;
-	printf("\n%d x %d í–‰ë ¬", size, size);
+	printf("\n%d x %d Çà·Ä", size, size);
 
 	int** matrix = (int**)malloc(sizeof(int*)*size);
 	for (int i = 0; i < size; i++)
@@ -83,8 +83,8 @@ int main()
 		}
 	}
 
-	printf("\nìµœëŒ“ê°’: %d\n(%d, %d), (%d, %d)\n", maxSum, maxi1, maxj1, maxi2, maxj2);
-	printf("ìµœì†Ÿê°’: %d\n(%d, %d), (%d, %d)\n", (-1)*minSum, mini1, minj1, mini2, minj2);
+	printf("\nÃÖ´ñ°ª: %d\n(%d, %d), (%d, %d)\n", maxSum, maxi1, maxj1, maxi2, maxj2);
+	printf("ÃÖ¼Ú°ª: %d\n(%d, %d), (%d, %d)\n", (-1)*minSum, mini1, minj1, mini2, minj2);
 
 	for (int i = 0; i < size; i++)
 	{
