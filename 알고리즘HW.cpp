@@ -25,7 +25,7 @@ int main()
 
 	while (true)
 	{
-		printf("파일 경로를 입력하세요: ");
+		printf("insert file name: ");
 		cin >> fileName;
 		ifile.open(fileName);
 		if (ifile.fail())
