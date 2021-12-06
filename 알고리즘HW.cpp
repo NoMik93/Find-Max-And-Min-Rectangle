@@ -25,7 +25,7 @@ int main()
 
 	while (true)
 	{
-		printf("insert file name: ");
+		printf("write file path: ");
 		cin >> fileName;
 		ifile.open(fileName);
 		if (ifile.fail())
